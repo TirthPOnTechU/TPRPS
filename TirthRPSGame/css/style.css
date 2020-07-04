@@ -1,0 +1,158 @@
+:root{
+    --primaryColor: #e3b04b;
+    --mainWhite: #f8f8f8;
+    --mainBlack: #2b2b28;
+    --lightBrown: #f1d6ab;
+    --mainSpacing: 0.1rem;
+    --mainTransition: all 0.3s;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--mainWhite);
+    color: var(--mainBlack);
+    font-family: 'Lato', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: var(--lightBrown);
+    position: static;
+    top: 0;
+    z-index: 1;
+}
+.header-container{
+    margin: auto;
+    width: 80%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.brand-title{
+    font-size: 3rem;
+    color: var(--mainWhite);
+    text-transform: uppercase;
+    letter-spacing: var(--mainSpacing);
+}
+.brand-title span{
+    color: var(--primaryColor);
+    letter-spacing: inherit;
+}
+.game{
+    width: 100%;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.game-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.user-selection{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+
+}
+.btns{
+    display: flex;
+    flex-direction: column;
+}
+.user-btn{
+    border: none;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: var(--mainBlack);
+    background-color: var(--mainWhite);
+    border: 2px solid var(--mainBlack);
+    transition: var(--mainTransition);
+    letter-spacing: var(--mainSpacing);
+
+}
+.user-btn:hover{
+    color: var(--mainWhite);
+    background-color: var(--lightBrown);
+    border: var(--lightBrown);
+
+}
+.display-content{
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: var(--mainSpacing);
+    position: relative;
+}
+.scoreboard{
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    letter-spacing: var(--mainSpacing);
+}
+.fa-undo{
+    color: var(--mainBlack);
+    padding: 1rem;
+    font-size: 2rem;
+    position: absolute;
+    left: 10px;
+    transition: var(--mainTransition);
+}
+.fa-undo:hover{
+    transform: rotate(-360deg);
+    color: var(--primaryColor);
+}
+.round-content{
+    color: var(--mainBlack);
+    font-size: 3rem;
+    position: relative;
+    bottom: 40px;
+    font-weight: bold;
+    letter-spacing: var(--mainSpacing);
+    text-align: center;
+}
+.display-content i{
+    color: var(--primaryColor);
+    position: absolute;
+    visibility: hidden;
+    animation-duration: 2s;
+}
+.user{
+    left: 0px;
+}
+.comp{
+    right: 0px;
+}
+
+@keyframes right-transition{
+    0%{
+        visibility: visible;
+    }
+    100%{
+        transform: translateX(200px);
+    }
+}
+
+@keyframes left-transition{
+    0%{
+        visibility: visible;
+    }
+    100%{
+        transform: translateX(-200px);
+    }
+}
